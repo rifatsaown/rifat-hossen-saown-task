@@ -1,13 +1,20 @@
-import { Bell, ChevronDown, Moon } from 'lucide-react';
+import { Bell, ChevronDown, Menu, Moon } from 'lucide-react';
 import { GlobeIcon } from '../assets';
 
-const Header = () => {
+interface HeaderProps {
+    toggleSidebar: () => void;
+}
+
+const Header = ({ toggleSidebar }: HeaderProps) => {
     return (
-        <header className="bg-white flex items-center justify-between h-20">
+        <header className="bg-white flex items-center justify-between h-20 shrink-0 border-b border-gray-100">
             {/* Right Box */}
-            <div className="flex items-center flex-1 px-6 h-full border-b border-gray-100">
+            <div className="flex items-center flex-1 px-4 md:px-6 h-full">
                 {/* Header Title */}
-                <div className="flex items-center flex-1">
+                <div className="flex items-center flex-1 gap-3">
+                    <button onClick={toggleSidebar} className="md:hidden text-gray-500 hover:text-gray-700">
+                        <Menu size={24} />
+                    </button>
                     <h1 className="text-[20px] font-medium text-gray-800">Service</h1>
                 </div>
 

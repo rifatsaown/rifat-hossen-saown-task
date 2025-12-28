@@ -18,7 +18,7 @@ const ServicePage = () => {
     return (
         <div className="">
             {/* Top Toolbar */}
-            <div className="bg-white p-6 rounded-t-xl border border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-0">
+            <div className="bg-white p-4 md:p-6 rounded-t-xl border border-gray-100 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b-0">
 
                 {/* Left Controls */}
                 <div className="flex flex-col sm:flex-row gap-2 flex-1">
@@ -49,17 +49,17 @@ const ServicePage = () => {
 
                 {/* Right Actions */}
                 <div className="flex items-center gap-3">
-                    <button className="flex items-center px-4 py-2 bg-[#5D06E9] text-white text-[15px] font-semibold rounded-sm hover:bg-[#5000c2] transition-colors shadow-sm">
+                    <button className="flex items-center px-4 h-[36px] bg-[#5D06E9] text-white text-[15px] font-semibold rounded-sm hover:bg-[#5000c2] transition-colors shadow-sm">
                         <Download className="w-4 h-4 mr-2" strokeWidth={3} />
                         EXPORT
                     </button>
-                    <button className="flex items-center px-4 py-2 bg-[#5D06E9] text-white text-[15px] font-semibold rounded-sm hover:bg-[#5000c2] transition-colors shadow-sm">
+                    <button className="flex items-center px-4 h-[36px] bg-[#5D06E9] text-white text-[15px] font-semibold rounded-sm hover:bg-[#5000c2] transition-colors shadow-sm">
                         <Plus className="w-4 h-4 mr-2" strokeWidth={3} />
                         ADD
                     </button>
                     {/* Rows per page */}
                     <div className="relative">
-                        <button className="flex items-center px-4 py-2 border border-gray-200 rounded-sm text-sm font-light text-gray-600 bg-white hover:bg-gray-50 transition-colors">
+                        <button className="flex items-center px-4 h-[36px] border border-gray-200 rounded-sm text-sm font-light text-gray-600 bg-white hover:bg-gray-50 transition-colors">
                             <span className="font-medium">10</span>
                             <ChevronDown className="w-4 h-4 ml-2 " />
                         </button>
@@ -73,22 +73,22 @@ const ServicePage = () => {
                     <table className="w-full text-left text-sm">
                         <thead className="bg-[#F5F5F5]/60 border-b border-gray-100">
                             <tr className="h-[50px]">
-                                <th className="px-6 py-3 text-[13px] font-medium uppercase tracking-wider">Name</th>
-                                <th className="px-6 py-3 text-[13px] font-medium uppercase tracking-wider">Organizer</th>
-                                <th className="px-6 py-3 text-[13px] font-medium uppercase tracking-wider">Pricing</th>
-                                <th className="px-6 py-3 text-[13px] font-medium uppercase tracking-wider">Type</th>
-                                <th className="px-6 py-3 text-[13px] font-medium uppercase tracking-wider text-right">Actions</th>
+                                <th className="px-4 md:px-6 py-3 text-[13px] font-medium uppercase tracking-wider whitespace-nowrap min-w-[180px]">Name</th>
+                                <th className="px-4 md:px-6 py-3 text-[13px] font-medium uppercase tracking-wider whitespace-nowrap min-w-[260px]">Organizer</th>
+                                <th className="px-4 md:px-6 py-3 text-[13px] font-medium uppercase tracking-wider whitespace-nowrap min-w-[140px]">Pricing</th>
+                                <th className="px-4 md:px-6 py-3 text-[13px] font-medium uppercase tracking-wider whitespace-nowrap min-w-[120px]">Type</th>
+                                <th className="px-4 md:px-6 py-3 text-[13px] font-medium uppercase tracking-wider text-right whitespace-nowrap min-w-[100px]">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100">
                             {services.map((service, index) => (
                                 <tr key={service.id} className={`hover:bg-gray-50/80 transition-colors group h-[50px] ${index % 2 === 0 ? 'bg-white' : 'bg-[#F5F5F5]/30'}`}>
-                                    <td className="px-6 py-2 font-light text-[#555555]">{service.name}</td>
+                                    <td className="px-4 md:px-6 py-2 font-light text-[#555555] whitespace-nowrap">{service.name}</td>
 
                                     {/* Organizer Column with Stacked Avatar */}
-                                    <td className="px-6 py-2">
+                                    <td className="px-4 md:px-6 py-2">
                                         <div className="flex items-center">
-                                            <div className="flex items-center mr-3">
+                                            <div className="flex items-center mr-3 shrink-0">
                                                 {/* First Avatar */}
                                                 <img src={service.avatar} alt="" className="w-8 h-8 rounded-full border-2 border-white bg-gray-100 object-cover relative z-10" />
 
@@ -105,15 +105,15 @@ const ServicePage = () => {
                                                     </>
                                                 )}
                                             </div>
-                                            <span className="text-[#555555] text-[15px] font-light">{service.organizer}</span>
+                                            <span className="text-[#555555] text-[15px] font-light whitespace-nowrap">{service.organizer}</span>
                                         </div>
                                     </td>
 
-                                    <td className="px-6 py-2 text-gray-500 text-[15px] font-light">{service.pricing}<span className='text-[12px]'>/Hour</span> </td>
-                                    <td className="px-6 py-2 text-gray-500 text-[15px] font-light">{service.type}</td>
+                                    <td className="px-4 md:px-6 py-2 text-gray-500 text-[15px] font-light whitespace-nowrap">{service.pricing}<span className='text-[12px]'>/Hour</span> </td>
+                                    <td className="px-4 md:px-6 py-2 text-gray-500 text-[15px] font-light whitespace-nowrap">{service.type}</td>
 
                                     {/* Actions */}
-                                    <td className="px-6 py-2 text-right">
+                                    <td className="px-4 md:px-6 py-2 text-right whitespace-nowrap">
                                         <div className="flex items-center justify-end gap-2 text-gray-400 opacity-100 transition-opacity">
                                             <button className="hover:bg-gray-100 p-2 rounded-full text-[#555555] transition-colors">
                                                 <Eye className="w-4 h-4" />
@@ -130,14 +130,14 @@ const ServicePage = () => {
                 </div>
 
                 {/* Pagination */}
-                <div className="px-6 py-4 border-t border-gray-100 flex items-center justify-between text-[13px] text-[#555]">
+                <div className="px-4 md:px-6 py-4 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-[#555]">
                     <span>Showing <strong>1-10</strong> out of <strong>17</strong> items found</span>
 
                     <div className="flex items-center gap-2">
-                        <button className="w-9 h-9 flex items-center justify-center rounded-sm bg-[#5D06E9] text-white font-medium shadow-sm transition-transform active:scale-95">1</button>
-                        <button className="w-9 h-9 flex items-center justify-center rounded-sm border border-gray-200 hover:bg-gray-50 text-gray-600 font-medium transition-colors">2</button>
-                        <button className="w-9 h-9 flex items-center justify-center rounded-sm border border-gray-200 hover:bg-gray-50 text-gray-600 font-medium transition-colors">3</button>
-                        <button className="w-9 h-9 flex items-center justify-center rounded-sm border border-gray-200 hover:bg-gray-50 text-gray-600 transition-colors">
+                        <button className="w-8 h-8 flex items-center justify-center rounded-sm bg-[#5D06E9] text-white font-medium shadow-sm transition-transform active:scale-95">1</button>
+                        <button className="w-8 h-8 flex items-center justify-center rounded-sm border border-gray-200 hover:bg-gray-50 text-gray-600 font-medium transition-colors">2</button>
+                        <button className="w-8 h-8 flex items-center justify-center rounded-sm border border-gray-200 hover:bg-gray-50 text-gray-600 font-medium transition-colors">3</button>
+                        <button className="w-8 h-8 flex items-center justify-center rounded-sm border border-gray-200 hover:bg-gray-50 text-gray-600 transition-colors">
                             <ChevronDown className="w-4 h-4 -rotate-90" />
                         </button>
                     </div>
