@@ -37,7 +37,7 @@ const Sidebar = () => {
                     {/* Children */}
                     <div className="space-y-2">
                         {/* Service (Active) */}
-                        <a href="#" className="flex items-center px-4 py-3 text-white bg-[#5D06E9] rounded-md shadow-sm transition-all">
+                        <a href="#" className="flex items-center px-4 py-3 text-white bg-[#5D06E9] rounded-sm shadow-sm transition-all">
                             <div className="w-4 h-4 rounded-full bg-white flex items-center justify-center mr-3">
                                 <div className="w-2 h-2 rounded-full bg-[#5D06E9]"></div>
                             </div>
